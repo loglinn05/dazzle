@@ -1,10 +1,10 @@
-<script setup>
-import HeaderComponent from '@/components/layout/HeaderComponent.vue'
-</script>
-
 <template>
-  <HeaderComponent />
-  App
+  <Header />
+  <router-view></router-view>
+  <Footer />
 </template>
 
-<style scoped></style>
+<script setup>
+import Header from '@/components/layout/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
+</script>

@@ -6,12 +6,24 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import PrimeVue from 'primevue/config';
-import 'primevue/resources/themes/aura-light-pink/theme.css';
+import PrimeVue from 'primevue/config'
+import 'primevue/resources/themes/aura-light-pink/theme.css'
+import 'primeicons/primeicons.css'
+import Ripple from 'primevue/ripple'
+
+import components from './components/global'
+
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(PrimeVue);
+
+app.use(PrimeVue, { ripple: true })
+app.directive('ripple', Ripple)
+
+components.forEach((component) => {
+  app.component(component.name, component.component)
+})
+
 app.use(router)
 
 app.mount('#app')
