@@ -9,7 +9,7 @@
       <FilterList v-model="filterValues" v-touch:swipe.left="hideFilterSidebar" />
     </template>
   </Sidebar>
-  <div class="xl:hidden inline-grid col-span-4">
+  <div class="xl:hidden inline-grid">
     <Button label="Filter" icon="pi pi-arrow-right" @click="showFilterSidebar" class="w-fit" />
   </div>
   <div class="xl:inline-grid hidden">

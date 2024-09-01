@@ -8,6 +8,9 @@ import Button from 'primevue/button'
 import Checkbox from 'primevue/checkbox'
 import Sidebar from 'primevue/sidebar'
 import ProductCard from './ProductCard.vue'
+import FloatLabel from 'primevue/floatlabel'
+import InputText from 'primevue/inputtext'
+import InputNumber from 'primevue/inputnumber'
 
 export default [
   {
@@ -41,5 +44,17 @@ export default [
   {
     name: 'ProductCard',
     component: ProductCard
+  },
+  {
+    name: 'FloatLabel',
+    component: FloatLabel
+  },
+  {
+    name: 'InputText',
+    component: InputText
+  },
+  {
+    name: 'InputNumber',
+    component: InputNumber
   }
 ]

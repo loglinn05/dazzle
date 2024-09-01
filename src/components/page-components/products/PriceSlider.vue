@@ -43,9 +43,8 @@
 <script setup>
 import { watch } from 'vue'
 import Slider from 'primevue/slider'
-import InputNumber from 'primevue/inputnumber'
 
-const props = defineProps({
+defineProps({
   listPrice: {
     type: Object
   }
@@ -53,7 +52,7 @@ const props = defineProps({
 
 const model = defineModel()
 
-watch(model, (newValue) => {
+watch(model, () => {
   if (model.value[0] > model.value[1]) {
     model.value[0] = model.value[1]
   }

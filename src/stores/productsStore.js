@@ -4,8 +4,10 @@ import { ref } from 'vue'
 
 export const useProductsStore = defineStore('products', () => {
   const products = ref([])
+  const productsLoading = ref(false)
 
   function getProducts(subcategoryId) {
+    productsLoading.value = true
     axios
       .post(`${import.meta.env.VITE_API_BASE_URL}/get-products`, { subcategory_id: subcategoryId })
       .then((response) => {
@@ -15,10 +17,14 @@ export const useProductsStore = defineStore('products', () => {
       .catch((error) => {
         console.error(error)
       })
+      .finally(() => {
+        productsLoading.value = false
+      })
   }
 
   return {
     products,
+    productsLoading,
     getProducts
   }
 })

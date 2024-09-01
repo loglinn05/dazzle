@@ -8,11 +8,15 @@
             v-model="model.types"
             :inputId="`type-${index}`"
             name="types"
-            :value="type"
+            :value="type.id"
             class="me-2"
           />
-          <label :for="`type-${index}`" class="text-violet-700 sm:text-lg text-base font-text">
-            {{ type }}
+          <label
+            :for="`type-${index}`"
+            class="w-full inline-flex justify-between text-violet-700 sm:text-lg text-base font-text"
+          >
+            <span>{{ type.title }}</span>
+            <span>{{ type.products_count }}</span>
           </label>
         </div>
       </div>
@@ -25,11 +29,15 @@
             v-model="model.sizes"
             :inputId="`size-${index}`"
             name="sizes"
-            :value="size"
+            :value="size.id"
             class="me-2"
           />
-          <label :for="`size-${index}`" class="text-violet-700 sm:text-lg text-base font-text">
-            {{ size }}
+          <label
+            :for="`size-${index}`"
+            class="w-full inline-flex justify-between text-violet-700 sm:text-lg text-base font-text"
+          >
+            <span>{{ size.title }}</span>
+            <span>{{ size.products_count }}</span>
           </label>
         </div>
       </div>
@@ -50,14 +58,14 @@
             v-model="model.manufacturers"
             :inputId="`manufacturer-${index}`"
             name="manufacturers"
-            :value="manufacturer"
+            :value="manufacturer.id"
             class="me-2"
           />
           <label
             :for="`manufacturer-${index}`"
-            class="text-violet-700 sm:text-lg text-base font-text"
+            class="w-full inline-flex justify-between text-violet-700 sm:text-lg text-base font-text"
           >
-            {{ manufacturer }}
+            <span>{{ manufacturer.name }}</span>
           </label>
         </div>
       </div>
@@ -71,9 +79,9 @@
           v-model="model.colors"
           :inputId="`color-${index + 1}`"
           name="colors"
-          :value="color"
+          :value="color.id"
           pt:box:class="rounded-none p-3"
-          :pt:box:style="`background-color: ${color}`"
+          :pt:box:style="`background-color: ${color.code}`"
           pt:icon:class="!hidden"
           pt:input:class="p-3"
         />
@@ -91,11 +99,11 @@
             v-model="model.materials"
             :inputId="`material-${index}`"
             name="materials"
-            :value="material"
+            :value="material.id"
             class="me-2"
           />
           <label :for="`material-${index}`" class="text-violet-700 sm:text-lg text-base font-text">
-            {{ material }}
+            {{ material.title }}
           </label>
         </div>
       </div>
@@ -108,11 +116,11 @@
             v-model="model.seasons"
             :inputId="`season-${index}`"
             name="seasons"
-            :value="season"
+            :value="season.id"
             class="me-2"
           />
           <label :for="`season-${index}`" class="text-violet-700 sm:text-lg text-base font-text">
-            {{ season }}
+            {{ season.title }}
           </label>
         </div>
       </div>
